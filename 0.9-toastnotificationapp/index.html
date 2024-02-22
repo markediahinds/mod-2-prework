@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> M.O.K.A Notifications</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/33c0cc8c11.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="showNotification(successMsg)">Success</button>
+        <button onclick="showNotification(errorMsg)">Error</button>
+        <button onclick="showNotification(invalidMsg)">Invalid</button>
+    </div>
+
+    <div id="notificationBox"></div>
+
+    <script>
+
+    let notificationBox = document.getElementById('notificationBox');
+    let successMsg = '<i class="fa-solid fa-circle-check"></i> Successfully submitted';
+    let errorMsg = '<i class="fa-solid fa-circle-xmark"></i> Please fix the error!';
+    let invalidMsg = '<i class="fa-solid fa-circle-exclamation"></i> Invalid input, check again';
+
+        function showNotification(msg){
+            let notification = document.createElement('div');
+            notification.classList.add('notification');
+            notification.innerHTML = msg;
+            notificationBox.appendChild(notification);
+
+            if(msg.includes('error')){
+                notification.classList.add('error');
+            }
+            if(msg.includes('Invalid')){
+                notification.classList.add('invalid');
+            }
+
+            setTimeout(()=>{
+                notification.remove();
+            },5000)
+        }
+
+    </script>
+
+</body>
+</html>
