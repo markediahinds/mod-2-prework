@@ -15,16 +15,17 @@
                 <li><a href="">SERVICES</a></li>
                 <li><a href="">WORK WITH ME</a></li>
             </ul>
+            <img src="images/moon.png" id="icon">
         </nav>
 
         <div class="info">
-            <h1>I'm <span>Markedia</span> aka <span>Moka</span></h1>
-            <p>This is my official portfolio website to showcase my work related to web development and UI design.</p>
+            <h1>Welcome, <br> I'm <span>Markedia</span></h1>
+            <p>This is my official portfolio website to showcase my work related to <br> web development and UI design.</p>
             <a href="">Download CV</a>
         </div>
 
         <div class="img-box">
-            <img src="images/purpleflower.webp" class="back-img">
+            <img src="images/rose.webp" class="back-img">
             <img src="images/mokameditatetransparent.png" class="main-img">
         </div>
 
@@ -35,9 +36,20 @@
         </div>
     </div>
 
+<script>
 
+    var icon = document.getElementById("icon");
+    
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src = "images/sun.png";
+        }else{
+            icon.src = "images/moon.png";
+        }
+    }
 
-
+</script>
 
  </body>
  </html>
