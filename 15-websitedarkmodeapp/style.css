@@ -11,8 +11,8 @@
     --secondary-color: #f1efe7;
 }
 #icon{
-    width:30px;
-    cursor:pointer;
+    width: 30px;
+    cursor: pointer;
 }
 nav ul{
     flex: 1;
