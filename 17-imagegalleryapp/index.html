@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.O.K.A Image Gallery | Horizontal Scrolling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="images/back.png" id="backBtn"/>
+    </div>
+    <div class="gallery">
+        <div>
+            <span><img src=images/moka-baby.jpg height="400" width="300"></span>
+            <span><img src=images/moka-model.jpg height="400" width="300"></span>
+            <span><img src=images/moka-smile.jpg height="400" width="300"></span>
+        </div>
+        <div>
+            <span><img src=images/moka-kundalini.jpg height="400" width="300"></span>
+            <span><img src=images/moka-glow.png height="400" width="300"></span>
+            <span><img src=images/moka-god.jpeg height="400" width="300"></span>
+        </div>
+        <img src="images/next.png" id="nextBtn"/>
+    </div>
+
+<script>
+
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+    })
+
+    nextBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    })
+
+    backBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    })
+
+</script>
+</body>
+</html>
